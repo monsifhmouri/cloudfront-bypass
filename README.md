@@ -1,17 +1,15 @@
-# CloudFront Bypass Toolkit
+# cloudfront-bypass-toolkit
 
-A toolkit for testing and bypassing AWS CloudFront edge protection mechanisms.  
-**For educational and authorized security testing only.**
+Toolkit for testing and bypassing AWS CloudFront edge protection.  
+Automates detection + header forgery + WebSocket tricks + and backend IP checks
 
 ## Features
 
-- Detects if a target is behind CloudFront
-- Attempts to bypass CloudFront protections using:
-  - Forged HTTP headers
-  - WebSocket upgrade requests
-  - Direct IP access testing
-- Provides recommendations for next steps
-- Comprehensive, modular, and easily extendable
+- CloudFront detection via HTTP headers
+- Header forgery with various X-Forwarded-* and CF-* tricks
+- WebSocket upgrade and bypass test
+- Direct IP discovery and access test
+- Summarized results and suggested next steps
 
 ## Usage
 
@@ -27,25 +25,19 @@ python3 cloudfront_bypass.py https://example.com
 
 ## Output
 
-* Detects CloudFront headers in target responses
-* Tests multiple bypass techniques and summarizes results
-* Suggests follow-up actions for further security testing
+* Shows if CloudFront is detected
+* Indicates if header or WebSocket bypass is possible
+* Prints any discovered backend IPs
 
 ## Requirements
 
-* Python 3.x
-* `requests` module (`pip install requests`)
-
-## Legal Disclaimer
-
-This tool is intended for **educational purposes only**.
-Use it **only** on targets you are explicitly authorized to test.
-The author is not responsible for any misuse or damage caused by this tool.
+* Python 3
+* requests module (`pip install requests`)
 
 ## Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+Open PRs or issues for suggestions and improvements
 
 ## License
 
-MIT License
+MIT
